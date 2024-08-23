@@ -6,7 +6,7 @@ html,
 body,
 :root {
   height: 100%;
-  @apply bg-[#ff66c4];
+  @apply bg-[#e17fe3];
 }
 
 .hidden-scrollbar {
