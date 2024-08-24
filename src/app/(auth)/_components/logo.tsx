@@ -15,7 +15,7 @@ export const Logo = () => {
         alt="IndieGo Live"
         width={300}
         height={300}
-        className="bg-[#ff66c4]"
+        className="bg-[#e17fe3]"
       />
       <p className="text-2xl font-semibold">
         Watch your favourite Indie Hackers <br /> build LIVE!
