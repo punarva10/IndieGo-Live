@@ -20,34 +20,36 @@ body,
 
 @layer base {
   :root {
-    --background: 280 60% 50%; /* Purple background */
+    --background: 280 60% 50%; /* Purple background for main content */
     --foreground: 0 0% 100%; /* White text */
-
+    
+    --sidebar-background: 280 60% 40%; /* Darker purple for sidebar */
+  
     --card: 280 60% 55%;
     --card-foreground: 0 0% 100%;
-
+  
     --popover: 280 60% 55%;
     --popover-foreground: 0 0% 100%;
-
+  
     --primary: 300 100% 70%; /* Pink accent */
     --primary-foreground: 0 0% 100%;
-
+  
     --secondary: 280 50% 60%;
     --secondary-foreground: 0 0% 100%;
-
+  
     --muted: 280 40% 65%;
     --muted-foreground: 0 0% 90%;
-
+  
     --accent: 300 100% 70%;
     --accent-foreground: 0 0% 100%;
-
+  
     --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
-
+  
     --border: 280 50% 60%;
     --input: 280 50% 60%;
     --ring: 300 100% 70%;
-
+  
     --radius: 0.5rem;
   }
 
