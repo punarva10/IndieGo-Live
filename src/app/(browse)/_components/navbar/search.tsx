@@ -41,7 +41,7 @@ export const Search = () => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search"
-        className="bg-[#f3e5f5] rounded-r-none h-9 focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"
+        className="bg-[#f3e5f5] rounded-r-none h-9 focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 text-primary"
       />
       {value && (
         <X
