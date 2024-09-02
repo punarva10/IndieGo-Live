@@ -14,6 +14,7 @@ export const getRecommended = async () => {
 
   let users = [];
 
+  //get Recommended list
   if (userId) {
     //For signed in user
     try {
