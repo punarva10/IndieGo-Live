@@ -1,10 +1,11 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { db } from "@/lib/db";
+import { cache } from "react";
 
-export const getSelf = async () => {
+const getSelfUncached = async () => {
   let self;
 
-  //get user details from clerk in client
+  //get user details from clerk
   try {
     self = await currentUser();
     if (!self || !self.username) {
@@ -15,7 +16,7 @@ export const getSelf = async () => {
     throw new Error("Authentication failed");
   }
 
-  //get user details from db in the server
+  //get user details from db 
   try {
     const user = await db.user.findUnique({
       where: { externalUserId: self.id },
@@ -31,3 +32,5 @@ export const getSelf = async () => {
     throw new Error("User retrieval failed");
   }
 };
+
+export const getSelf = cache(getSelfUncached)

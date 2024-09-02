@@ -1,7 +1,8 @@
 import { db } from "@/lib/db";
 import { getSelf } from "@/lib/auth-service";
+import { cache } from "react";
 
-export const getRecommended = async () => {
+const getRecommendedUncached = async () => {
   let userId;
 
   //get the current user details
@@ -50,3 +51,5 @@ export const getRecommended = async () => {
     }
   }
 };
+
+export const getRecommended = cache(getRecommendedUncached)
