@@ -14,11 +14,13 @@ model User {
   externalUserId String @unique
   bio String? @db.Text
 
-  following Follow[] @relation("Following")
-  followedBy Follow[] @relation("FollowedBy")
-
+  //default fields
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  //virtual fields (back relations to Follow)
+  following Follow[] @relation("Following")
+  followedBy Follow[] @relation("FollowedBy")
 }
 
 model Follow {
@@ -26,11 +28,13 @@ model Follow {
   followerId String
   followingId String
 
-  follower User @relation(name: "Following", fields: [followerId], references: [id], onDelete: Cascade)
-  following User @relation(name: "FollowedBy", fields: [followingId], references: [id], onDelete: Cascade)
-
+  //default fields
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  //relations to User
+  follower User @relation(name: "Following", fields: [followerId], references: [id], onDelete: Cascade)
+  following User @relation(name: "FollowedBy", fields: [followingId], references: [id], onDelete: Cascade)
 
   @@unique([followerId, followingId])
   @@index([followerId])
